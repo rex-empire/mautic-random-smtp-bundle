@@ -35,7 +35,11 @@ class SmtpRandomizer
     public function __construct(IntegrationHelper $integrationHelper)
     {
         $integration = $integrationHelper->getIntegrationObject('RandomSmtp');
-
+        error_log('************** IN THE CUT ****** ');
+        var_dump($integration);
+        var_dump($integration->getIntegrationSettings());
+        var_dump($integration->getIntegrationSettings()->getIsPublished());
+        
         if (!$integration || $integration->getIntegrationSettings()->getIsPublished() !== true) {
             throw new IntegrationDisableException('Integration RandomSmtp doesn\'t exist or is unpublished');
         }
