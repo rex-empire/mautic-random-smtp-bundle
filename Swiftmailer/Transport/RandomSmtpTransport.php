@@ -67,7 +67,7 @@ class RandomSmtpTransport extends \Swift_SmtpTransport
      *
      * @param Swift_Mime_Message $message
      */
-    private function setRandomSmtpServer(\Swift_Mime_Message &$message = null, &$transport)
+    private function setRandomSmtpServer(\Swift_Mime_SimpleMessage &$message = null, &$transport)
     {
         try {
             $this->smtpRandomizer->randomize($transport, $message);
