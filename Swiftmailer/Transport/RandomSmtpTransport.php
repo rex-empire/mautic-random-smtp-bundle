@@ -46,14 +46,14 @@ class RandomSmtpTransport extends \Swift_SmtpTransport
 
 
     /**
-     * @param \Swift_Mime_Message $message
+     * @param \Swift_Mime_SimpleMessage $message
      * @param null                $failedRecipients
      *
      * @return int|void
      *
      * @throws \Exception
      */
-    public function send(\Swift_Mime_Message $message, &$failedRecipients = null)
+    public function send(\Swift_Mime_SimpleMessage $message, &$failedRecipients = null)
     {
             $transport = new \Swift_SmtpTransport('localhost');
             $this->setRandomSmtpServer($message, $transport);
